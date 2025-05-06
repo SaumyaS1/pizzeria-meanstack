@@ -1,0 +1,25 @@
+<div class="container mt-4">
+    <p class="cl2">Italy has many variations of pizza. The Neapolitan pizza, or Naples-style pizza, is made
+      specifically with buffalo mozzarella </p>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <tbody>
+          <tr *ngFor="let ing of data">
+            <td class="col-md-3">
+              <img src="{{ ing.image }}" style="max-width: 100px; height: auto;">
+            </td>
+            <td class="col-md-3">
+              {{ ing.name }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ ing.price | currency:'INR' }}
+            </td>
+            <td class="col-md-2">
+              <div style="position: relative;top: 60%;left: 9%;">
+                <input (change)="onTrigger(ing)" class="form-check-input" type="checkbox" id="checkbox{{ ing.id }}">
+              </div>
+              <p style="position: relative;left: 14%;color: orange;cursor: pointer;">Add</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="id8"><button type="button" class="btn btn-primary" routerLink="/cart">Build Pizza</button></p>
+  </div>

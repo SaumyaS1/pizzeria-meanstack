@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6" *ngFor="let pizza of data">  
+      <div class="card">        
+      <div class="row">
+        <div class="col-2"><b>{{pizza.name}}</b></div>
+        <div class="col-6">{{pizza.description}}</div>
+      <div class="col-4">
+        <img src="{{pizza.image}}" style="object-fit: cover; height: 150px; width: 160px;" class="mt-2">
+      </div>
+      </div>
+      <div class="row">
+        <div class="col-2 " style="margin-top:-80px">
+          <h6  [style.width.px]="20" [style.height.px]="20" [style.backgroundColor]="pizza.type==='veg' ? 'green' : 'red'" style="margin-left: 20px;"></h6>
+          <strong>{{pizza.price | currency:'INR' }}</strong>
+        </div>
+        <div class="col-6 mb-2" style="margin-top:-50px">
+          <b>Ingredients</b>:{{pizza.ingredients}}
+          <br>
+          <b>Topping</b>:{{pizza.topping}}
+        </div>
+        <div class="col-4" >
+          <button (click)="addPizza(pizza)" type="submit" class="btn btn-default" style="color: white;background-color:orange;margin-top: 13px;margin-left: 25px;" routerLink="/cart" >Add to cart</button>
+        </div>
+        <div class="row">
+        </div>
+      </div>
+     </div>
+    </div>
+  </div>
+
+</div>
